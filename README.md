@@ -1,10 +1,10 @@
 # ミチオコーポレーション リメイク
 
-`dist` が公開用ファイル一式です。HTML・CSS・JavaScriptで構成され、ビルド不要です。
+ルート直下の `index.html`、CSS・JavaScript、`assets` が公開用ファイルです。ビルド不要です。
 
 GitHub: https://github.com/michiocorporation/Michio
 
-今後の編集はこのリポジトリで行います。確認用サイトは https://michio-creative-remake.michio-corporation.chatgpt.site/ です。現在のSites公開用チェックアウトは隣の `../michio-remake` にあり、再公開時はこのリポジトリの `dist` を同期してから公開します。GitHubへのpushだけでは確認用サイトは更新されません。
+今後の編集はこのリポジトリで行います。公開サイトは https://michiocorporation.github.io/Michio/ です。GitHub Pagesは `main` ブランチのルートを公開し、push後に更新されます。以前のSites確認用URLは独立した公開先で、自動では同期されません。
 
 - 参考サイトの大きなタイポグラフィ → メッセージ → 事業紹介 → お知らせ → お問い合わせという構成に、制作実績、強み、ポートフォリオ、FAQを追加。
 - 建設業・物流支援の事業紹介と建築の施工事例を除き、指定の6事業へ変更。
@@ -14,6 +14,7 @@ GitHub: https://github.com/michiocorporation/Michio
 - Google Fontsを使用。読み込みできない環境では端末の標準フォントで表示します。
 - ロゴのオープニング（約2.5秒）から、時間差で現れる立体文字へ接続。ワイヤーフレームの立方体・八面体・リングをCanvasで回転させています。
 - オープニングはスキップ可能。ファーストビュー下部で動きを一時停止でき、端末の「視差効果を減らす」設定にも対応。画面外と非表示タブでは描画を停止します。
+- Service欄は白背景・番号付きの2列カードで6事業を紹介し、スマートフォンでは1列になります。
 
 ## 表示
 
@@ -21,11 +22,11 @@ GitHub: https://github.com/michiocorporation/Michio
 
 ## 編集箇所
 
-- `dist/index.html`: 本文・構成・ナビゲーション
-- `dist/style.css`: 配色・レイアウト・レスポンシブ表示
-- `dist/app.js`: モバイルメニュー・実績画像の拡大表示
-- `dist/motion.css` / `dist/motion.js`: オープニング・立体文字・幾何学アニメーション
-- `dist/motion-boot.js`: 初期表示の判定と安全な表示復帰
-- `dist/assets`: 最適化済み画像
+- `index.html`: 本文・構成・ナビゲーション
+- `style.css`: 配色・レイアウト・レスポンシブ表示
+- `app.js`: モバイルメニュー・実績画像の拡大表示
+- `motion.css` / `motion.js`: オープニング・立体文字・幾何学アニメーション
+- `motion-boot.js`: 初期表示の判定と安全な表示復帰
+- `assets`: 最適化済み画像
 
 既存の本番サイトには変更を加えていません。

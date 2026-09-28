@@ -57,6 +57,7 @@
   const meshes=[cube,octa,ring];
   // x/y are section-relative; sizes are in CSS pixels. Text areas stay clear.
   const layouts={
+    services:[[.5,.5,34]],
     hero:[[.03,.08,17],[.27,.04,19],[.49,.14,22],[.76,.06,17],[.96,.1,24],[.025,.47,14],[.49,.48,16],[.93,.46,21],[.055,.84,19],[.28,.88,15],[.53,.83,23],[.76,.89,18],[.97,.8,20],[.66,.44,14],[.86,.31,13],[.4,.96,15]],
     about:[[.035,.19,19],[.43,.15,24],[.94,.89,25],[.38,.86,17]],
     strengths:[[.96,.1,22],[.04,.83,24],[.48,.93,17]],
@@ -79,7 +80,7 @@
     const {context:ctx,width,height,layout,palette}=field;
     ctx.clearRect(0,0,width,height);
     const small=width<650;
-    const visibleLayout=small && field.type==='hero'
+    const visibleLayout=field.type==='services' ? layout : small && field.type==='hero'
       ? [[.96,.08,17],[.018,.19,13],[.98,.34,12],[.98,.48,14],[.018,.62,13],[.96,.77,18],[.82,.93,12],[.03,.95,13]]
       : small ? layout.map(([x,y,size],i)=>[i%2 ? .98 : .02,y,size*.8]) : layout;
     visibleLayout.forEach(([px,py,size],i) => {
@@ -90,7 +91,7 @@
       const ay=phase*.61+t*.21;
       const az=phase*.4+t*(i%2 ? -.09 : .08);
       const cx=Math.cos(ax),sx=Math.sin(ax),cy=Math.cos(ay),sy=Math.sin(ay),cz=Math.cos(az),sz=Math.sin(az);
-      const radius=size*(small ? .72 : 1);
+      const radius=field.type==='services' ? Math.min(width,height)*.205 : size*(small ? .72 : 1);
       const centerX=width*px+Math.sin(t*.35+phase)*(small ? 3 : 8);
       const centerY=height*py+Math.sin(t*.44+phase)*(small ? 5 : 12);
       const points=mesh.points.map(([x,y,z]) => {
@@ -101,8 +102,8 @@
         return [centerX+x3*radius*p,centerY+y3*radius*p];
       });
       ctx.strokeStyle=palette[i%palette.length];
-      ctx.globalAlpha=field.type==='hero' ? .62 : .38;
-      ctx.lineWidth=small ? 1 : 1.25;
+      ctx.globalAlpha=field.type==='services' ? .85 : field.type==='hero' ? .62 : .38;
+      ctx.lineWidth=field.type==='services' ? 2.2 : small ? 1 : 1.25;
       ctx.lineJoin='round';
       ctx.beginPath();
       mesh.edges.forEach(([a,b])=>{ctx.moveTo(...points[a]);ctx.lineTo(...points[b]);});

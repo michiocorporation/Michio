@@ -21,4 +21,28 @@ dialog{width:min(900px,calc(100% - 36px));max-height:90dvh;max-width:none;border
 .site-header nav a,.faq summary,.footer-main nav{font-size:14px}
 @media(min-width:981px) and (max-width:1190px){.site-header nav{gap:13px}.site-header nav a{font-size:13px}}
 @media(max-width:650px){.hero h1 br:nth-child(2){display:initial}.service-en{letter-spacing:.07em}.work-domain{font-size:12px}.work-info{flex-wrap:wrap}.portfolio-grid .category{font-size:11px}.section-heading>p br{display:none}}
+/* Service: reference-inspired two-column cards with floating number badges. */
+.services{background:#fff;color:var(--navy);border-radius:0;padding-top:90px;padding-bottom:100px}
+.services-intro{display:grid;grid-template-columns:minmax(0,1fr) 150px;align-items:center;gap:36px;margin-bottom:67px}
+.services-kicker{color:var(--red);font-size:14px;font-weight:700;letter-spacing:.055em;margin-bottom:9px}
+.services-intro h2{color:var(--red);font-size:clamp(25px,2.4vw,36px);font-weight:800;letter-spacing:.015em;line-height:1.6}
+.services-intro h2>span{display:inline-block}
+.services-intro-copy>p:last-child{font-size:16px;line-height:2;margin-top:22px}
+.services-mark{position:relative;width:150px;height:150px;isolation:isolate;pointer-events:none}
+.services-mark .geometry-field{z-index:0}
+.service-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:58px 32px}
+.service-card{position:relative;display:flex;flex-direction:column;align-items:center;min-width:0;background:var(--red);color:#fff;padding:38px 36px 22px;transition:background .2s,box-shadow .2s}
+.service-card:hover{background:#a5192a;box-shadow:0 12px 26px #131e3614}
+.service-card:focus-visible{outline-color:var(--navy);outline-offset:6px}
+.service-card-number{position:absolute;top:0;left:50%;transform:translate(-50%,-50%);display:grid;place-items:center;width:52px;height:52px;border:2px solid var(--red);border-radius:50%;background:#fff;color:var(--red);font-family:var(--display);font-size:25px;font-weight:500;line-height:1}
+.service-card-icon{height:106px;display:flex;align-items:center;justify-content:center;margin-bottom:15px}
+.service-card-icon svg{width:105px;height:105px;overflow:visible;fill:none;stroke:var(--navy);stroke-width:1.35;stroke-linecap:round;stroke-linejoin:round}
+.service-card-icon .icon-white{fill:#fff}.service-card-icon .icon-gold{fill:#e6c782}.service-card-icon .icon-light-line{stroke:#f6e5bd}
+.service-card h3{font-size:23px;font-weight:800;text-align:center;line-height:1.55;letter-spacing:.035em}
+.service-card-english{font-size:11px;letter-spacing:.08em;text-align:center;color:#f5dbe0;font-weight:600;line-height:1.7;margin-top:6px}
+.service-card-description{font-size:16px;line-height:1.9;margin-top:19px;align-self:stretch;flex:1}
+.service-card-footer{width:100%;display:flex;justify-content:space-between;align-items:center;gap:14px;margin-top:24px;padding-top:14px;border-top:1px solid #ffffff3d;font-size:12px;color:#fae9ec;line-height:1.7}
+.service-card-footer>span:last-child{font-size:25px;color:#e6c782;line-height:1}
+@media(max-width:980px){.services-intro{grid-template-columns:minmax(0,1fr) 115px;gap:22px}.services-intro h2{font-size:28px}.services-mark{width:115px;height:140px}.services-intro-copy>p:last-child br{display:none}.service-cards{gap:54px 25px}.service-card{padding:36px 26px 22px}.service-card h3{font-size:21px}.service-card-english{font-size:10px;letter-spacing:.025em}}
+@media(max-width:650px){.services{padding-top:64px;padding-bottom:70px}.services-intro{display:block;position:relative;margin-bottom:59px}.services-kicker{font-size:11px;letter-spacing:.02em;padding-right:48px}.services-intro h2{font-size:27px;line-height:1.6;max-width:280px;padding-right:16px}.services-intro-copy>p:last-child{font-size:16px;margin-top:20px}.services-mark{position:absolute;right:-9px;top:-8px;width:70px;height:90px}.service-cards{grid-template-columns:1fr;gap:51px}.service-card{padding:35px 25px 22px}.service-card-number{width:47px;height:47px;font-size:23px}.service-card h3{font-size:22px}.service-card-english{font-size:11px}.service-card-icon{margin-bottom:14px;height:94px}.service-card-icon svg{width:94px;height:94px}.service-card-description{margin-top:18px}.service-card-footer{margin-top:21px;font-size:12px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
