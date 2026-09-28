@@ -20,6 +20,8 @@ GitHub: https://github.com/michiocorporation/Michio
 
 このフォルダで `node server.mjs` を実行すると `http://127.0.0.1:4197` で確認できます。
 
+CSS・JavaScriptの読み込みURLには、古いキャッシュによる表示崩れを防ぐため `?v=内容のSHA256先頭12文字` を付けています。これらのファイルを編集した際は、`index.html` 内の対応するバージョンも更新してください。GitHub Pagesの公開処理が成功していても古い画面が見える場合は、公開URLで `Ctrl + F5` を押して再読み込みしてください。
+
 ## 編集箇所
 
 - `index.html`: 本文・構成・ナビゲーション
