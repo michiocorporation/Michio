@@ -6,8 +6,6 @@
   const hero = document.querySelector('.hero');
   const opening = document.querySelector('.opening-screen');
   const skip = document.querySelector('.opening-skip');
-  const toggle = document.querySelector('.motion-toggle');
-  let paused = false;
   let openingFinished = !root.classList.contains('intro-playing');
   let openingTimer;
   let revealTimer;
@@ -111,7 +109,7 @@
     });
     ctx.globalAlpha=1;
   }
-  function canRun() {return !paused && !reduced.matches && !document.hidden && fields.some(f=>f.visible);}
+  function canRun() {return !reduced.matches && !document.hidden && fields.some(f=>f.visible);}
   function tick(now) {
     frame=0;
     if (!canRun()) {lastTime=0;return;}
@@ -150,12 +148,8 @@
   } else fields.forEach(f=>{f.visible=true;});
 
   function updatePreference() {
-    root.classList.toggle('motion-paused',paused||reduced.matches);
+    root.classList.toggle('motion-paused',reduced.matches);
     root.classList.toggle('motion-ready',!reduced.matches);
-    toggle.hidden=reduced.matches;
-    toggle.setAttribute('aria-pressed',String(paused));
-    toggle.querySelector('.motion-toggle-label').textContent=paused ? '動きを再生' : '動きを止める';
-    toggle.querySelector('.motion-toggle-icon').textContent=paused ? '▷' : 'Ⅱ';
     if (reduced.matches) {
       finishOpening();
       clearTimeout(revealTimer);
@@ -165,7 +159,6 @@
     }
     syncAnimation();
   }
-  toggle.addEventListener('click',()=>{paused=!paused;updatePreference();});
   reduced.addEventListener('change',updatePreference);
   document.addEventListener('visibilitychange',()=>{
     root.classList.toggle('page-hidden',document.hidden);
