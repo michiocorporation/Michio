@@ -50,6 +50,13 @@ const projects = {
     ],
     images: ['msbar.webp'], alt: ['M’s Bar 店舗紹介・料金・SNSと地図への導線を掲載したWebサイトの制作画面'], url: 'https://msbar-karaoke.com/'
   },
+  teriha: {
+    title: 'TERIHA U15', category: 'WEB DESIGN',
+    description: '女子中学生と保護者に向けたバスケットボールクラブの公式サイト。チームの理念、コーチ紹介、練習場所、入会案内をまとめ、体験・見学のお問い合わせにつながる情報を掲載しています。',
+    images: ['teriha-desktop.jpg', 'teriha-mobile.jpg'],
+    alt: ['TERIHA U15のPC版トップページ', 'TERIHA U15のスマートフォン版トップページ'],
+    url: 'https://teriha-u15.com/'
+  },
   gig: { title: 'The Gig Gravity', category: 'LOGO DESIGN', description: 'バンドの世界観を表現したロゴデザイン。黒背景・白背景の2つの展開をご覧いただけます。', images: ['gig-gravity.webp', 'gig-gravity-white.webp'], alt: ['The Gig Gravity ロゴ 黒背景', 'The Gig Gravity ロゴ 白背景'] },
   alive: { title: 'ALIVE PHOTO', category: 'LOGO DESIGN', description: 'カメラの絞りをモチーフにした、フォトグラファーのロゴデザイン。', images: ['alive-photo.webp'], alt: ['ALIVE PHOTO ロゴデザイン'] },
   amafuri: { title: '天降神社', category: 'SIGN DESIGN', description: '情報の読みやすさと、神社らしいモチーフを組み合わせた案内看板のデザイン。', images: ['amafuri.webp'], alt: ['天降神社 案内看板デザイン'] },
@@ -115,6 +122,17 @@ document.querySelectorAll('[data-project]').forEach(button => {
     document.querySelector('#project-category').textContent = project.category;
     document.querySelector('#project-description').textContent = project.description;
     renderProjectDetails(project);
+    const mockup = document.querySelector('#project-mockup');
+    const devicePreview = button.querySelector('.device-mockup');
+    mockup.replaceChildren();
+    mockup.hidden = !devicePreview;
+    mockup.className = `project-mockup work-${button.dataset.project}`;
+    if (devicePreview) {
+      const preview = devicePreview.cloneNode(true);
+      preview.querySelectorAll('img').forEach(image => { image.loading = 'eager'; });
+      mockup.append(preview);
+    }
+    document.querySelector('#project-images-heading').hidden = !project.url;
     const link = document.querySelector('#project-link');
     link.hidden = !project.url;
     if (project.url) link.href = project.url;
@@ -123,6 +141,7 @@ document.querySelectorAll('[data-project]').forEach(button => {
       const image = document.createElement('img');
       image.src = `assets/${source}`;
       image.alt = project.alt[index];
+      if (source.endsWith('-mobile.jpg')) image.className = 'project-mobile-capture';
       return image;
     });
     document.querySelector('#project-images').replaceChildren(...images);
