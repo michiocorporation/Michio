@@ -46,3 +46,22 @@ dialog{width:min(900px,calc(100% - 36px));max-height:90dvh;max-width:none;border
 @media(max-width:980px){.services-intro{grid-template-columns:minmax(0,1fr) 115px;gap:22px}.services-intro h2{font-size:28px}.services-mark{width:115px;height:140px}.services-intro-copy>p:last-child br{display:none}.service-cards{gap:54px 25px}.service-card{padding:36px 26px 22px}.service-card h3{font-size:21px}.service-card-english{font-size:10px;letter-spacing:.025em}}
 @media(max-width:650px){.services{padding-top:64px;padding-bottom:70px}.services-intro{display:block;position:relative;margin-bottom:59px}.services-kicker{font-size:11px;letter-spacing:.02em;padding-right:48px}.services-intro h2{font-size:27px;line-height:1.6;max-width:280px;padding-right:16px}.services-intro-copy>p:last-child{font-size:16px;margin-top:20px}.services-mark{position:absolute;right:-9px;top:-8px;width:70px;height:90px}.service-cards{grid-template-columns:1fr;gap:51px}.service-card{padding:35px 25px 22px}.service-card-number{width:47px;height:47px;font-size:23px}.service-card h3{font-size:22px}.service-card-english{font-size:11px}.service-card-icon{margin-bottom:14px;height:94px}.service-card-icon svg{width:94px;height:94px}.service-card-description{margin-top:18px}.service-card-footer{margin-top:21px;font-size:12px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
+
+/* Works case studies */
+.work-summary{margin-top:16px;font-size:16px;line-height:1.9}
+.work-services,.project-service-tags{padding:0;display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin-top:14px}
+.work-services li,.project-service-tags li{padding:5px 11px;border:1px solid #d9dde5;border-radius:3px;color:var(--navy);font-size:14px;line-height:1.6;background:#fff}
+.project-details{padding:0 40px 36px}
+.project-details[hidden],.project-images-heading[hidden]{display:none}
+.project-details>section{padding-top:25px;margin-top:26px;border-top:1px solid var(--line)}
+.project-details>section:first-child{margin-top:0}
+.project-details h3,.project-images-heading{font-size:20px;font-weight:800;line-height:1.6;letter-spacing:.025em}
+.project-details p{font-size:16px;line-height:1.95;margin-top:12px}
+.project-service-tags{margin-top:15px}
+.project-service-tags li{border-color:#e7c7cd;background:#fff8f9;color:var(--red)}
+.project-point-list{padding:0;display:grid;gap:23px;margin-top:20px;list-style:none}
+.project-point-list>li{border-left:3px solid var(--gold);padding-left:18px}
+.project-point-list h4{font-size:17px;line-height:1.65;font-weight:700}
+.project-point-list p{margin-top:7px}
+.project-images-heading{padding:0 40px;margin:0 0 20px}
+@media(max-width:650px){.work-summary{margin-top:13px}.work-services{gap:7px}.work-services li{font-size:14px;padding:4px 9px}.project-details{padding:0 22px 28px}.project-details>section{padding-top:21px;margin-top:23px}.project-images-heading{padding:0 22px}.project-point-list>li{padding-left:14px}}
