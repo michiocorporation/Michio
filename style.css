@@ -88,3 +88,19 @@ dialog{width:min(900px,calc(100% - 36px));max-height:90dvh;max-width:none;border
 .project-images .project-mobile-capture{max-width:390px}
 @media(min-width:1200px){.works-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:45px 38px}.work-info{align-items:flex-start;flex-direction:column;gap:3px}.work-info h3{font-size:22px}}
 @media(max-width:650px){.works-grid{gap:45px}.project-mockup{padding:20px 12px 12px}}
+
+/* Keep the supplied logo unchanged; frame its transparent margins with CSS. */
+.brand-lockup{display:flex;flex-direction:column;align-items:center;gap:4px;--brand-mark-size:50px}
+.brand-lockup .brand-mark{display:block;position:relative;overflow:hidden;width:var(--brand-mark-size);aspect-ratio:725/682;flex-shrink:0}
+.brand-lockup .brand-mark>img{position:absolute;max-width:none;width:148.965517%;height:auto;left:-25.655172%;top:-28.299120%;margin:0}
+.brand-caption{display:flex;flex-direction:column;align-items:center;gap:2px;line-height:1.25;white-space:nowrap}
+.brand-name{font-size:12px;font-weight:900;letter-spacing:.035em}
+.brand-name-en{font-size:9px;font-weight:800;letter-spacing:.02em}
+.brand-lockup.footer-brand{height:auto;--brand-mark-size:78px;gap:9px}
+.footer-brand .brand-name{font-size:17px}
+.footer-brand .brand-name-en{font-size:12px}
+.opening-brand{--brand-mark-size:112px;gap:12px}
+.opening-brand .brand-name{font-size:22px}
+.opening-brand .brand-name-en{font-size:15px}
+@media(max-width:980px){.brand-lockup.brand{--brand-mark-size:40px}.brand .brand-name{font-size:11px}.brand .brand-name-en{font-size:8px}}
+@media(max-width:650px){.brand-lockup.footer-brand{--brand-mark-size:68px}.footer-brand .brand-name{font-size:15px}.footer-brand .brand-name-en{font-size:11px}.opening-brand{--brand-mark-size:96px}.opening-brand .brand-name{font-size:19px}.opening-brand .brand-name-en{font-size:13px}}
