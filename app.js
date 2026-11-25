@@ -24,6 +24,22 @@ document.addEventListener('click', event => {
 window.matchMedia('(min-width: 981px)').addEventListener('change', closeMenu);
 
 const projects = {
+  aoi: {
+    title: '蒼井音呼', category: 'WEB DESIGN / ANIMATION',
+    description: '俳人・蒼井音呼さんの活動と人柄を伝える公式プロフィールサイト。柔らかな色合いと動きのある演出を組み合わせ、言葉に寄り添う、穏やかな世界観をつくりました。',
+    services: ['世界観の設計', '配色設計', 'アニメーション制作'],
+    backgroundTitle: '制作の目的',
+    background: '俳句や随筆に関心を持つ方へ、活動の背景や表現への姿勢を伝えることを目指しました。プロフィールやこれまでの歩みを読み進めながら、人柄と作品の世界に触れられる構成にしています。',
+    scope: 'サイト全体の世界観づくり、色合いの設計、アニメーションによる演出に力を入れて制作しました。',
+    points: [
+      { title: '言葉と自然がつながる世界観', text: 'インコや犬、草花のモチーフを取り入れ、日々の暮らしや季節の気配を感じる表現に。余白を生かしたレイアウトと組み合わせ、文章をゆっくり読みたくなる雰囲気を目指しました。' },
+      { title: '柔らかな色を重ねた配色', text: 'アイボリーをベースに、淡いグリーンや水色、黄色を組み合わせました。イラストと背景の色合いをそろえ、ページ全体に温かさと穏やかな統一感を持たせています。' },
+      { title: '世界観に寄り添うアニメーション', text: 'あしらいに動きを加え、静かなページの中にも表情が生まれるように演出。色合いやモチーフと調和する動きにこだわり、サイトを巡る時間そのものが印象に残る表現を目指しました。' }
+    ],
+    images: ['aoi-inko-desktop.jpg', 'aoi-inko-mobile.jpg'],
+    alt: ['蒼井音呼 公式プロフィールサイトのPC版トップページ', '蒼井音呼 公式プロフィールサイトのスマートフォン版トップページ'],
+    url: 'https://nonandjel.world/index.html'
+  },
   bardot: {
     title: 'バルドー姉さん', category: 'WEB DESIGN',
     description: 'ドラマを初めて知る方や出演者のファンに向けて、作品の世界観と見どころを伝える公式サイト。作品紹介からストーリー、キャスト情報までをまとめ、作品への関心を深めてもらうことを目指しました。',
@@ -94,7 +110,7 @@ function renderProjectDetails(project) {
   scope.textContent = project.scope;
   servicesSection.append(tags, scope);
 
-  const backgroundSection = addSection('ご依頼の背景・制作の目的');
+  const backgroundSection = addSection(project.backgroundTitle || 'ご依頼の背景・制作の目的');
   const background = document.createElement('p');
   background.textContent = project.background;
   backgroundSection.append(background);

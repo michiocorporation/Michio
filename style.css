@@ -69,6 +69,7 @@ dialog{width:min(900px,calc(100% - 36px));max-height:90dvh;max-width:none;border
 .work{min-width:0}
 .work-visual{display:block;width:100%;height:auto;aspect-ratio:1.55;position:relative;isolation:isolate;overflow:hidden;padding:0;text-align:left;background:#fff;border-radius:8px}
 .work-bardot{--mockup-tint:#e8dfcb}
+.work-aoi{--mockup-tint:#dce9c9}
 .work-msbar{--mockup-tint:#ead5dc}
 .work-teriha{--mockup-tint:#cee4e9}
 .work-visual::before{content:'';position:absolute;z-index:-1;inset:0 15% 9% 0;border-radius:0 36% 48% 27%;background:linear-gradient(150deg,var(--mockup-tint),#fff 92%)}
@@ -85,5 +86,5 @@ dialog{width:min(900px,calc(100% - 36px));max-height:90dvh;max-width:none;border
 .project-mockup[hidden]{display:none}
 .project-mockup>.device-mockup{max-width:740px;margin:auto}
 .project-images .project-mobile-capture{max-width:390px}
-@media(min-width:1200px){.works-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:30px}.work-info{align-items:flex-start;flex-direction:column;gap:3px}.work-info h3{font-size:22px}}
+@media(min-width:1200px){.works-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:45px 38px}.work-info{align-items:flex-start;flex-direction:column;gap:3px}.work-info h3{font-size:22px}}
 @media(max-width:650px){.works-grid{gap:45px}.project-mockup{padding:20px 12px 12px}}
